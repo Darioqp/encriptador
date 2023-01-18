@@ -14,50 +14,66 @@ body {
 }
 
 main {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     height: 100vh;
 }
 
 .logo {
-    width: 15%;
+    width: 10vw;
     border-radius: 10px;
-
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
 }
 
 .caja-texto {
     display: inline-block;
     background-color: gray;
-    width: 60%;
-    height: 75vh;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    width: 50%;
+    height: 60vh;
+    position: fixed;
+    bottom: 2rem;
+    left: calc(10vw + 2rem);
 }
 
 textarea {
-    background-color: #cae8ff;
-    width: 80%;
-    margin-left: 20%;
+    background-color: #ffcace;
+    width: 100%;
+    padding-left: 1rem;
+
 }
 
 textarea::placeholder {
-    color: #233dff;
+    color: #050a30;
     font-size: 1.5rem;
     font-family: 'Indie Flower', cursive;
-    height: 100%;
-
 }
 
 .caja-resultado {
     display: inline-block;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     text-align: center;
     width: 30%;
     border-radius: 10px;
-    margin-top: 0;
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    bottom: .5rem;
 }
 
 .img-buscador {
-    width: 50%;
+    width: 70%;
+    margin: 1rem auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.texto-resultado {
+    padding: 0 .3rem;
+    margin-bottom: 0.5rem;
 }
 
 @media screen and (max-width: 1400px) {
