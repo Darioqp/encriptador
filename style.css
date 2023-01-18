@@ -21,9 +21,10 @@ main {
 }
 
 .link-logo {
+    align-self: flex-start;
+    /* height: 10vh; */
     margin-top: .5rem;
     margin-left: .5rem;
-    height: 10vh;
 }
 
 .logo {
@@ -106,12 +107,15 @@ textarea::placeholder {
 }
 
 .caja-resultado {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: rgb(255, 255, 255);
     text-align: center;
     width: 30%;
     border-radius: 10px;
-    margin: .5rem;
+    margin: 2rem .5rem;
+    padding: 1rem 0;
     box-shadow: 5px 5px 20px #050a30;
 }
 
@@ -127,14 +131,12 @@ textarea::placeholder {
 
 h2 {
     font-size: 1.2rem;
-    margin-bottom: 1rem;
     padding: 0 0.2rem;
     color: #050a30;
 }
 
 .texto-resultado {
     padding: 0 .3rem;
-    margin-bottom: 0.5rem;
     color: #050a30;
     font-size: .8rem;
 }
@@ -143,15 +145,41 @@ h2 {
     html {
         font-size: 25px;
     }
+
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 22px;
+    }
+
+    .caja-resultado {
+        height: 70%;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+    html {
+        font-size: 19px;
+    }
+
+    .logo {
+        width: 15vw;
+    }
 }
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     main {
         flex-direction: column;
+    }
+
+    .logo {
+        width: 20vw;
     }
 
     .img-buscador {
@@ -159,12 +187,16 @@ h2 {
     }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 576px) {
     html {
         font-size: 12px;
     }
 
     main {
         flex-direction: column;
+    }
+
+    .logo {
+        width: 30vw;
     }
 }
