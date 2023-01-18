@@ -16,34 +16,42 @@
   </head>
   <body>
     <main>
-      <a href="https://github.com/Darioqp" target="_blank"
+
+      <!-- seccion del logo -->
+
+      <a class="link-logo" href="https://github.com/Darioqp" target="_blank"
         ><img
           class="logo"
           src="images/logo3.png"
           alt="imagen del logotipo del desarrollador"
       /></a>
 
-      <div class="caja-texto">
-        <div class="caja-formulario">
-          <form action="">
-            <textarea
-              name=""
-              id=""
-              cols="30"
-              rows="20"
-              placeholder="Ingresa el texto aquí ..." autocomplete="on"
-            ></textarea>
-            <p class="texto-aviso">
-              ‼️ Solo se permiten letras minúsculas y sin acentos.
-            </p>
-            <div class="caja-botones">
-              
-              <button class="boton" id="boton-encriptar">Encriptar</button>
-              <button class="boton" id="boton-desencriptar">Desencriptar</button>
-            </div>
-          </form>
+      <!-- seccion de la caja con el formulario -->
+
+      <div class="caja-formulario">
+        <form class="formulario" action="">
+          <textarea
+            name=""
+            id=""
+            cols="30"
+            rows="5"
+            placeholder="Ingresa el texto aquí ..."
+          ></textarea>
+        </form>
+        <div class="caja-texto">
+          <p class="texto-aviso">
+            ‼️ Solo se permiten letras minúsculas y sin acentos.
+          </p>
+        </div>
+        <div class="caja-botones">
+          <button class="boton" id="boton-encriptar">Encriptar</button>
+          <button class="boton" id="boton-desencriptar">Desencriptar</button>
         </div>
       </div>
+
+
+      <!-- seccion de la caja donde se muestra el resultado de la encriptación -->
+
       <div class="caja-resultado">
         <img
           class="img-buscador"
@@ -56,6 +64,9 @@
         </p>
       </div>
     </main>
+
+    <!-- Sección con el script de JavaScript -->
+
     <script src="main.js"></script>
   </body>
 </html>
