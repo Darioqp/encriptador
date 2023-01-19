@@ -16,13 +16,12 @@
   </head>
   <body>
     <main>
-
       <!-- seccion del logo -->
 
       <a class="link-logo" href="https://github.com/Darioqp" target="_blank"
         ><img
           class="logo"
-          src="images/logo3.png"
+          src="images/logo.png"
           alt="imagen del logotipo del desarrollador"
       /></a>
 
@@ -33,32 +32,33 @@
           <textarea
             name=""
             id=""
-            cols="30"
-            rows="5"
             placeholder="Ingresa el texto aquí ..."
+            autofocus
           ></textarea>
+          <div class="caja-texto">
+            <p class="texto-aviso">
+              ‼️ Solo se permiten letras minúsculas y sin acentos.
+            </p>
+          </div>
+          <div class="caja-botones">
+            <button class="boton" id="boton-encriptar">Encriptar</button>
+            <button class="boton" id="boton-desencriptar">Desencriptar</button>
+          </div>
         </form>
-        <div class="caja-texto">
-          <p class="texto-aviso">
-            ‼️ Solo se permiten letras minúsculas y sin acentos.
-          </p>
-        </div>
-        <div class="caja-botones">
-          <button class="boton" id="boton-encriptar">Encriptar</button>
-          <button class="boton" id="boton-desencriptar">Desencriptar</button>
-        </div>
       </div>
-
 
       <!-- seccion de la caja donde se muestra el resultado de la encriptación -->
 
       <div class="caja-resultado">
-        <img
-          class="img-buscador"
-          src="images/Buscador4.png"
-          alt="imagen de una persona con una lupa"
-        />
-        <h2>No se ha encontrado ningún mensaje.</h2>
+        <div class="caja-img">
+          <img
+            class="img-buscador"
+            src="images/Buscador2.png"
+            alt="imagen de una persona con una lupa"
+          />
+        </div>
+
+        <h2 class="titulo-resultado">No se ha encontrado ningún mensaje.</h2>
         <p class="texto-resultado">
           Ingrese el texto que desea encriptar o desencriptar.
         </p>

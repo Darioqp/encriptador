@@ -5,26 +5,22 @@
     font-family: 'Indie Flower', cursive;
 }
 
-html {
-    font-size: 16px;
-}
-
 body {
     background-color: #f4f6fc;
 }
 
 main {
-    height: 100vh;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 100vh;
+    gap: 2rem;
+    margin: 1rem;
+    justify-content: space-evenly;
+    max-width: 1440px;
 }
 
 .link-logo {
     align-self: flex-start;
-    /* height: 10vh; */
-    margin-top: .5rem;
-    margin-left: .5rem;
+    
 }
 
 .logo {
@@ -34,46 +30,54 @@ main {
 }
 
 .logo:hover {
-    transform: scale(0.8);
+    transform: scale(1.1);
 }
 
 .caja-formulario {
-    margin: 1rem .2rem;
-    display: flex;
-    flex-direction: column;
+    flex-grow: 8;
+    height: 80vh;
+    align-self: center;
 }
 
 .formulario {
-    height: 75%;
+    height: 100%;
 }
 
-.caja-texto {
+.caja-resultado {
     display: flex;
-    background-color: #f4f6fc;
-    width: 90%;
-    margin-left: 1rem;
-    height: 10%;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    align-self: stretch;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px #050a30;
+    margin: 4rem auto;
 }
 
 textarea {
     background: none;
     width: 100%;
-    height: 100%;
+    height: 60vh;
     padding: 2rem 1rem 0;
     resize: none;
     border: none;
     display: block;
     overflow: auto;
     outline: none;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     caret-color: #656565;
 }
 
 textarea::placeholder {
     color: #050a30;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-style: italic;
+}
+
+.texto-aviso {
+    margin: 0 auto;
+    text-align: center;
 }
 
 .caja-botones {
@@ -81,7 +85,6 @@ textarea::placeholder {
     justify-content: space-evenly;
     background-color: none;
     padding: .5rem 0;
-    height: 15%;
 }
 
 .boton {
@@ -90,7 +93,7 @@ textarea::placeholder {
     color: white;
     border-radius: 10px;
     border: none;
-    font-size: 1rem;
+    font-size: 2rem;
     font-family: inherit;
     transition: .5s;
 }
@@ -102,101 +105,65 @@ textarea::placeholder {
     color: #050a30;
 }
 
-.texto-aviso {
-    font-size: .5rem;
-}
-
-.caja-resultado {
+.caja-img {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    width: 30%;
-    border-radius: 10px;
-    margin: 2rem .5rem;
-    padding: 1rem 0;
-    box-shadow: 5px 5px 20px #050a30;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .img-buscador {
-    width: 70%;
-    margin: 1rem auto;
+    max-width: 200px;
     transition: 1s;
 }
 
 .img-buscador:hover {
-    transform: rotate(25deg);
+    transform: rotate(35deg);
 }
 
-h2 {
-    font-size: 1.2rem;
-    padding: 0 0.2rem;
-    color: #050a30;
+.titulo-resultado {
+    width: 80%;
+    text-align: center;
+    margin: 1rem auto;
+
 }
 
 .texto-resultado {
-    padding: 0 .3rem;
-    color: #050a30;
-    font-size: .8rem;
-}
-
-@media screen and (max-width: 1400px) {
-    html {
-        font-size: 25px;
-    }
-
-}
-
-@media screen and (max-width: 1200px) {
-    html {
-        font-size: 22px;
-    }
-
-    .caja-resultado {
-        height: 70%;
-    }
-
+    width: 80%;
+    text-align: center;
+    margin: 1rem auto;
 }
 
 @media screen and (max-width: 992px) {
-    html {
-        font-size: 19px;
+    main {
+        flex-direction: column;
+        gap: ;
+    }
+
+    .link-logo {
+        align-self: center;
     }
 
     .logo {
         width: 15vw;
     }
-}
 
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 15px;
+    .caja-formulario {
+        width: 90vw;
+        flex-grow: 0;
+        height: 60vh;
     }
 
-    main {
-        flex-direction: column;
+    textarea {
+        height: 50vh;
     }
 
-    .logo {
-        width: 20vw;
+    .caja-resultado {
+        width: 90vw;
+        flex-grow: 0;
+        margin: 0 auto;
     }
 
-    .img-buscador {
+    .caja-img {
         display: none;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    html {
-        font-size: 12px;
-    }
-
-    main {
-        flex-direction: column;
-    }
-
-    .logo {
-        width: 30vw;
     }
 }
