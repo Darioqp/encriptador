@@ -25,9 +25,9 @@
           alt="imagen del logotipo del desarrollador"
       /></a>
 
-      <!-- seccion de la caja con el formulario -->
+      <!-- seccion del formulario -->
 
-      <div class="caja-formulario">
+      <section class="caja-formulario">
         <form class="formulario" action="">
           <textarea
             name=""
@@ -41,31 +41,38 @@
             </p>
           </div>
           <div class="caja-botones">
-            <button class="boton" id="boton-encriptar" onclick="encriptarTexto()">Encriptar</button>
-            <button class="boton" id="boton-desencriptar" onclick="desencriptarTexto()">Desencriptar</button>
+            <button type="button" class="boton" id="boton-encriptar">
+              Encriptar
+            </button>
+            <button type="button" class="boton" id="boton-desencriptar">
+              Desencriptar
+            </button>
           </div>
         </form>
-      </div>
+      </section>
 
-      <!-- seccion de la caja donde se muestra el resultado de la encriptación -->
+      <!-- seccion donde se muestra el resultado de la encriptación -->
 
-      <div class="caja-resultado">
-        <div class="caja-img">
+      <section class="caja-resultado">
+        <p id="texto-resultado"></p>
+        <div id="contenedor-referencia">
           <img
-            class="img-buscador"
+            id="img-buscador"
             src="images/Buscador2.png"
             alt="imagen de una persona con una lupa"
           />
+          <h2 class="titulo-referencia">No se ha encontrado ningún mensaje.</h2>
+          <p class="texto-referencia">
+            Ingrese el texto que desea encriptar o desencriptar.
+          </p>
         </div>
-
-        <h2 class="titulo-resultado">No se ha encontrado ningún mensaje.</h2>
-        <p class="texto-resultado">
-          Ingrese el texto que desea encriptar o desencriptar.
-        </p>
-      </div>
+        <button type="button" class="boton" id="boton-copiar">
+          Copiar
+        </button>
+      </section>
     </main>
 
-    <!-- Sección con el script de JavaScript -->
+    <!-- script de JavaScript -->
 
     <script src="main.js"></script>
   </body>

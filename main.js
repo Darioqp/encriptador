@@ -1,59 +1,83 @@
-function encriptarTexto() {
-  let texto = document.getElementById("caja-texto").value;
+const btnEncriptar = document.querySelector("#boton-encriptar");
+const btnDesencriptar = document.querySelector("#boton-desencriptar");
+const btnCopiar = document.querySelector("#boton-copiar");
+
+const mensaje = document.querySelector("#caja-texto");
+
+const mensajeResultado = document.querySelector("#texto-resultado");
+
+const contenedorReferencia = document.querySelector("#contenedor-referencia");
+
+//En la función validar se trabaja con la negación porque por un lado es más fácil validar que no existen caracteres especiales negando con el signo (^) la regex [a-z0-9\s]. Pero como la función se llama validarTexto, es necesario que devuelva true en caso de que el texto ingresado sea valido (por eso negamos en el return con el signo de admiración)
+function validarTexto(string) {
   const regex = /[^a-z0-9\s]/;
-  console.log(regex.test(texto));
+  return !regex.test(string);
+}
 
-  if (regex.test(texto)) {
-    alert("¡No se permiten letras mayúsculas ni caracteres especiales!");
-  } else {
-    let textoEncriptado = texto.replace(/a|e|i|o|u/g, function(letra) {
-      if (letra === "a") {
-        return "ai";
-      } else if (letra === "e") {
-        return "enter";
-      } else if (letra === "i") {
-        return "imes";
-      } else if (letra === "o") {
-        return "ober";
-      } else if (letra === "u") {
-        return "ufat";
+function encriptar(string) {
+  let mensajeEncriptado = string.value.replace(/a|e|i|o|u/g, function (letra) {
+    if (letra === "a") {
+      return "ai";
+    } else if (letra === "e") {
+      return "enter";
+    } else if (letra === "i") {
+      return "imes";
+    } else if (letra === "o") {
+      return "ober";
+    } else if (letra === "u") {
+      return "ufat";
+    }
+  });
+
+  return mensajeEncriptado;
+}
+
+function desencriptar(string) {
+  let mensajeDesencriptado = string.value.replace(/ai|enter|imes|ober|ufat/g, function (palabra) {
+      if (palabra === "ai") {
+        return "a";
+      } else if (palabra === "enter") {
+        return "e";
+      } else if (palabra === "imes") {
+        return "i";
+      } else if (palabra === "ober") {
+        return "o";
+      } else if (palabra === "ufat") {
+        return "u";
       }
-    })
-    console.log(textoEncriptado);
-  }
+    }
+  );
+  return mensajeDesencriptado;
 }
 
-function desencriptarTexto() {
+function copiarAlPortapapeles() {
+  navigator.clipboard.writeText(mensajeResultado.innerText);
+  alert("¡Mensaje copiado!");
+}
+
+btnEncriptar.addEventListener("click", () => {
   
-}
+  if (validarTexto(mensaje.value)) {
+    mensajeResultado.textContent = encriptar(mensaje);
+    mensajeResultado.style.display = "block";
+    contenedorReferencia.style.display = "none";
+    mensaje.value = "";
+    btnCopiar.style.display = "block";
+  } else {
+    alert("¡No se permiten letras mayúsculas ni caracteres especiales!");
+  }
+});
 
-//código separado en dos funciones
+// btnCopiar.addEventListener("click", () => {
+//   mensajeResultado.select();
+//   mensajeResultado.setSelectionRange(0, 99999);
+//   navigator.clipboard.writeText(mensajeResultado.value);
+//   alert("Se copió el texto");
+// })
 
-// function validarTexto(texto) {
-//   const regex = /[^a-z0-9\s]/;
-//   return !regex.test(texto);
-// }
+btnDesencriptar.addEventListener("click", () => {
+  mensajeResultado.textContent = desencriptar(mensaje);
+  mensaje.value = "";
+})
 
-// function encriptarTexto() {
-//   let texto = document.getElementById("caja-texto").value;
-
-//   if (!validarTexto(texto)) {
-//     alert("¡No se permiten letras mayúsculas ni caracteres especiales!");
-//   } else {
-//     let textoEncriptado = texto.replace(/a|e|i|o|u/gi, function(letra) {
-//         switch (letra) {
-//           case "a":
-//             return "ai";
-//           case "e":
-//             return "enter";
-//           case "i":
-//             return "imes";
-//           case "o":
-//             return "ober";
-//           case "u":
-//             return "ufat";
-//         }
-//     });
-//     console.log(textoEncriptado);
-//   }
-// }
+btnCopiar.addEventListener('click', copiarAlPortapapeles);

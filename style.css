@@ -18,6 +18,8 @@ main {
     max-width: 1440px;
 }
 
+/* Estilos del logo */
+
 .link-logo {
     align-self: flex-start;
     
@@ -33,6 +35,8 @@ main {
     transform: scale(1.1);
 }
 
+/* Estilos de la sección con el formulario de ingreso del texto a encriptar */
+
 .caja-formulario {
     flex-grow: 8;
     height: 80vh;
@@ -41,18 +45,6 @@ main {
 
 .formulario {
     height: 100%;
-}
-
-.caja-resultado {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-    align-self: stretch;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 5px 5px 20px #050a30;
-    margin: 4rem auto;
 }
 
 textarea {
@@ -100,18 +92,37 @@ textarea::placeholder {
 
 .boton:hover {
     cursor: pointer;
-    transform: scale(1.1);
     background-color: #cae8ff;
     color: #050a30;
 }
 
-.caja-img {
+/* Estilos de la caja donde se muestran los resultados */
+
+.caja-resultado {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    padding: 1rem;
+    flex-grow: 1;
+    align-self: stretch;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 5px 5px 20px #050a30;
+    margin: 4rem auto;
+    min-width: 400px;
+    max-width: 500px;
 }
 
-.img-buscador {
+#texto-resultado {
+    display: none;
+    text-align: center;
+    max-width: 90%;
+    margin: 1rem auto;
+    
+}
+
+#img-buscador {
+    display: block;
+    margin: 0 auto;
     max-width: 200px;
     transition: 1s;
 }
@@ -120,23 +131,29 @@ textarea::placeholder {
     transform: rotate(35deg);
 }
 
-.titulo-resultado {
+.titulo-referencia {
     width: 80%;
     text-align: center;
     margin: 1rem auto;
 
 }
 
-.texto-resultado {
+.texto-referencia {
     width: 80%;
     text-align: center;
     margin: 1rem auto;
+    overflow: scroll;
+}
+
+#boton-copiar {
+    max-width: 50%;
+    margin: 2rem auto;
+    display: none;
 }
 
 @media screen and (max-width: 992px) {
     main {
         flex-direction: column;
-        gap: ;
     }
 
     .link-logo {
@@ -163,7 +180,7 @@ textarea::placeholder {
         margin: 0 auto;
     }
 
-    .caja-img {
+    #img-buscador {
         display: none;
     }
 }
