@@ -103,13 +103,17 @@ textarea::placeholder {
     flex-direction: column;
     justify-content: center;
     flex-grow: 1;
-    align-self: stretch;
+    align-self: center;
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 5px 5px 20px #050a30;
     margin: 4rem auto;
     min-width: 400px;
     max-width: 500px;
+    min-height: 500px;
+    overflow: hidden;
+    overflow: auto;
+    max-height: 90vh;
 }
 
 #texto-resultado {
@@ -117,7 +121,9 @@ textarea::placeholder {
     text-align: center;
     max-width: 90%;
     margin: 1rem auto;
-    
+    font-size: 1.1rem;
+    word-wrap: break-word;
+    padding-top: 1rem;
 }
 
 #img-buscador {
@@ -178,9 +184,17 @@ textarea::placeholder {
         width: 90vw;
         flex-grow: 0;
         margin: 0 auto;
+        min-height: 0;
+        display: inline-block;
+        overflow: auto;
     }
 
     #img-buscador {
         display: none;
     }
+
+    #texto-resultado {
+        font-size: 1rem;
+    }
 }
+  
