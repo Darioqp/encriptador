@@ -52,7 +52,10 @@ function desencriptar(string) {
 
 function copiarAlPortapapeles() {
   navigator.clipboard.writeText(mensajeResultado.innerText);
-  alert("¡Mensaje copiado!");
+  swal({
+    title: "¡Mensaje copiado!",
+    icon: "success",
+  });
 }
 
 btnEncriptar.addEventListener("click", () => {
@@ -64,7 +67,11 @@ btnEncriptar.addEventListener("click", () => {
     mensaje.value = "";
     btnCopiar.style.display = "block";
   } else {
-    alert("¡No se permiten letras mayúsculas ni caracteres especiales!");
+    swal({
+      title: "Oops! 🙄",
+      text: "¡No se permiten letras mayúsculas ni caracteres especiales!",
+      icon: "error",
+    });
   }
 });
 
